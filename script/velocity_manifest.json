@@ -1,0 +1,41 @@
+{
+  "defaultData": {
+    "headline": "%file%",
+    "testCaseId": "TC.%file%",
+    "testCaseName": "%file%",
+    "hidden": false,
+    "timeout": 10,
+    "verdictMethod": "VERDICT_PARSING",
+    "commandSequence": [
+      "%file% %parameterNameValuePairList%"
+    ],
+    "parameters": [
+    ],
+    "executionMessages": {
+      "ok": ".*verified.*",
+      "info": ".*DEBUG.*|.*INFO.*",
+      "warning": ".*WARNING.*",
+      "error": ".*ERROR.*|.*CRITICAL.*"
+    },
+    "verdictParsing": {
+      "passTest": "Finished: PASSED",
+      "passTestIfNotAlreadyFailed": "SUCCESS",
+      "failTestIfPassing": "Failure number \\d+",
+      "failTest": "Finished: FAILED"
+    }
+  },
+  "fileSets": [
+    {
+    "name": "Echo-batch",
+    "description": "Test of batch script",
+    "fileNameMatch": ".*(\\.bat)$",
+    "language": "batch"
+    },
+    {
+    "name": "SystemInfo-PowerShell",
+    "description": "Test of PowerShell script",
+    "fileNameMatch": ".*(\\.ps1)$",
+    "language": "powershell"
+    }
+  ]
+}
